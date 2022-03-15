@@ -25,6 +25,10 @@ class Store
     #[ORM\Column(type: 'datetime_immutable')]
     private $updatedAt;
 
+    #[ORM\ManyToOne(targetEntity: Town::class, inversedBy: 'stores')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $town;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +78,18 @@ class Store
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getTown(): ?Town
+    {
+        return $this->town;
+    }
+
+    public function setTown(?Town $town): self
+    {
+        $this->town = $town;
 
         return $this;
     }
