@@ -6,6 +6,7 @@ use App\Repository\TownRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: TownRepository::class)]
 class Town
@@ -22,9 +23,11 @@ class Town
     private $population;
 
     #[ORM\Column(type: 'datetime_immutable')]
+    #[Gedmo\Timestampable(on : 'create')]
     private $createdAt;
 
     #[ORM\Column(type: 'datetime_immutable')]
+    #[Gedmo\Timestampable(on : 'update')]
     private $updatedAt;
 
     #[ORM\OneToMany(mappedBy: 'town', targetEntity: Store::class, orphanRemoval: true)]

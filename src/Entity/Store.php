@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\StoreRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: StoreRepository::class)]
 class Store
@@ -20,9 +21,11 @@ class Store
     private $picture;
 
     #[ORM\Column(type: 'datetime_immutable')]
+    #[Gedmo\Timestampable(on : 'create')]
     private $createdAt;
 
     #[ORM\Column(type: 'datetime_immutable')]
+    #[Gedmo\Timestampable(on : 'update')]
     private $updatedAt;
 
     #[ORM\ManyToOne(targetEntity: Town::class, inversedBy: 'stores')]
