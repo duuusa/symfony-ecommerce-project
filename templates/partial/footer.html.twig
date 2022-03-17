@@ -1,0 +1,29 @@
+<footer>
+    <div class="footer-container-links">
+        <div class="list-links">
+            <h5>Shop and Learn</h5>
+            <a href="{{ path('app_store') }}">Store</a>
+            <ul>
+                {% for category in categories %}
+                    <li><a href="">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="list-links">
+            <h5>Account</h5>
+            <a href="{{ path('app_register') }}">Register</a>
+            <a href="{{ path('app_login') }}">Login</a>
+            <a href="">Profile</a>
+            <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    </div>
+    <div class="copyrights-footer">
+        <div class="footer-links">
+            <p>Copyright © 2022 Clément Duvivier All rights reserved.</p>
+            <a href="">Privacy Policy</a>
+            <a href="">Use of Cookies</a>
+            <a href="">Terms of Use</a>
+            <a href="">Legal</a>
+        </div>
+    </div>
+</footer>

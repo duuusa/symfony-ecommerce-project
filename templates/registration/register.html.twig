@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Register{% endblock %}</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    <script src="https://kit.fontawesome.com/e99e67dc10.js" crossorigin="anonymous"></script>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+    <header>
+        {{ render(controller('App\\Controller\\AppController::nav')) }}
+    </header>
+    <nav class="nav-register">
+        <h3>Apple ID</h3>
+        <ul>
+            <li><a href="{{ path('app_login') }}">Sign in</a></li>
+            <li><a href="{{ path('app_register') }}">Create Your Account</a></li>
+            <li id="faq">FAQ</li>
+        </ul>
+    </nav>
+    <div class="form">
+        <div class="header-form">
+            <h1 class="header-form-title">Create your apple ID</h1>
+            <span class="header-form-subtitle">If you already have an account, go <a href="{{ path('app_login') }}">here</a><i class="fa-solid fa-angle-right"></i></span>
+        </div>
+        {{ form_start(registrationForm) }}
+        <div class="column-form">
+            <div class="label-form">{{ form_label(registrationForm.name, null, {'label': 'Name :'}) }}</div>
+            {{ form_widget(registrationForm.name, {'attr': {'class' : 'input'}}) }}
+            {{ form_help(registrationForm.name, {'attr':
+                {'class' : 'input'}})
+            }}
+        </div>
+        <div class="column-form">
+            <div class="label-form">{{ form_label(registrationForm.email, null, {'label': 'Email :'}) }}</div>
+            {{ form_widget(registrationForm.email, {'attr': {'class' : 'input'}}) }}
+            {{ form_help(registrationForm.email, {'attr':
+                {'class' : 'input'}})
+            }}
+        </div>
+        <div class="column-form">
+            <div class="label-form">{{ form_label(registrationForm.plainPassword, null, {'label': 'Password :'})}}</div>
+            {{ form_widget(registrationForm.plainPassword, {'attr': {'class' : 'input'}}) }}
+            {{ form_help(registrationForm.plainPassword, {'attr':
+                {'class' : 'input'}})
+            }}
+        </div>
+        {{ form_row(registrationForm.agreeTerms) }}
+        <div class="header-valid">
+            <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+            <button type="submit" class="btn">Continue</button>
+        </div>
+        {{ form_end(registrationForm) }}
+    </div>
+</body>
+</html>
