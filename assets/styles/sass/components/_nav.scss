@@ -1,0 +1,22 @@
+.nav-register {
+  justify-content: space-around;
+  ul {
+    margin:unset;
+  }
+  background-color: var(--bg-grey);
+  h3 {
+    font-weight: 600;
+  }
+  li {
+    font-size: 14px;
+    a {
+      color: var(--black);
+      &:hover {
+        color: var(--black);
+      }
+    }
+  }
+  #faq {
+    font-size: 12px;
+  }
+}

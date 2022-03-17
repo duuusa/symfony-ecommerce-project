@@ -1,0 +1,59 @@
+.form {
+  padding: 1em;
+  @include column;
+  @include center-align;
+  .header-form{
+    padding: 1em;
+    text-align: center;
+  }
+}
+
+.label-form {
+  padding: 0.1em;
+  margin-bottom: 5px;
+  color: #666666;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.header-form-title {
+  letter-spacing: 0.025em;
+  font-weight: 600;
+}
+
+.header-form-subtitle {
+  i {
+    padding: 0.2em;
+  }
+  a,i {
+    color: var(--blue);
+  }
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.input {
+  width: 300px;
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid var(--border-color-footer);
+}
+
+.column-form {
+  padding: 0.5em;
+  @include column;
+  margin-bottom: 25px;
+}
+
+.header-valid {
+  @include column;
+  @include center-align;
+  i {
+    padding: 1em;
+    color: var(--black)
+  }
+}

@@ -1,0 +1,49 @@
+@mixin flex {
+  display: flex;
+}
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}
+@mixin row {
+  display: flex;
+  flex-direction: row;
+}
+@mixin center {
+  justify-content: center;
+}
+@mixin center-align {
+  align-items: center;
+}
+@mixin center-total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin fw-store {
+  padding: 2em;
+  font-weight: 600;
+  letter-spacing: .007em;
+}
+@mixin center-align {
+  i {
+    margin-top: 3px;
+    padding: 0.5em;
+    color: var(--blue);
+  }
+  align-items: center;
+}
+
+@mixin card-properties {
+  .title {
+    font-size: 40px;
+  }
+  .subtitle {
+    padding: 0.5em;
+    font-size: 21px;
+  }
+  a {
+    font-size: 18px;
+    font-weight: 300;
+  }
+}

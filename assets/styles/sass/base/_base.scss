@@ -1,0 +1,18 @@
+main {
+  background-color: var(--bg-white);
+}
+#watch {
+  width: 160px;
+}
+#air {
+  padding: 0.2em;
+  width: 60px;
+  height: 35px;
+}
+.grey {
+  color: #6e6e73;
+}
+.row-center-total{
+  @include row;
+  @include center-total;
+}

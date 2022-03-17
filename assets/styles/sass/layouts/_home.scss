@@ -1,0 +1,110 @@
+.container {
+  height: 600px;
+  background-position: center;
+  background-size:cover;
+}
+
+.content-hero-container {
+  padding: 2em;
+  text-align: center;
+  .title {
+    font-size: 56px;
+  }
+  .subtitle {
+    padding: 0.5em;
+    font-size: 28px;
+  }
+  .r-s {
+    padding: 0;
+  }
+  a {
+    font-size: 21px;
+    font-weight: 300;
+  }
+}
+
+.subtext {
+  color: var(--subtext-color);
+  font-size: 21px;
+  font-weight: 300;
+}
+
+.content-ipad-container {
+  .title, .subtitle {
+    color: var(--white-color);
+  }
+  @include column;
+  @include center-align;
+  padding-top: 200px;
+  width: 50%;
+  align-items: center;
+  text-align: center;
+
+  @include card-properties;
+}
+
+.cards-container {
+  @include row;
+}
+
+.content-container {
+  padding: 1.5em;
+  text-align: center;
+
+  @include card-properties;
+}
+
+.width-50 {
+  margin: 5px;
+  width: 50%;
+}
+
+.hero {
+  background-image: url("/public/assets/illustrations/hero_iphone13pro_large.jpeg");
+}
+
+.se {
+  margin-top: 10px;
+  background-image: url("/public/assets/illustrations/hero_iphonese_preorder_large.jpeg");
+}
+
+.ipad {
+  background-image: url("/public/assets/illustrations/hero_ipadair_large.jpeg");
+  .title {
+    padding: 0.1em;
+  }
+}
+
+.display {
+  background-image: url("/public/assets/illustrations/promo_studiodisplay_large.jpeg");
+}
+
+.mac-studio {
+  background-image: url("/public/assets/illustrations/promo_macstudio_large.jpeg");
+}
+
+.iphone13 {
+  background-image: url("/public/assets/illustrations/promo_iphone13_preorder_large.jpeg");
+}
+
+.watch {
+  background-image: url("/public/assets/illustrations/promo_watch_lte_large.jpeg");
+}
+
+.btn-hero {
+  @include row;
+  @include center;
+  padding: 1em;
+}
+
+.after-arrow {
+  @include row;
+  @include center-align;
+  a {
+    font-size: 21px;
+    color: #06c;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
