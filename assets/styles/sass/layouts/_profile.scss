@@ -1,0 +1,22 @@
+.profile-container {
+  margin: 0 auto;
+  width: 80%;
+  padding: 3em 0.5em;
+  background-color: var(--bg-grey);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.user-info {
+  h5 {
+    padding: 0.5em;
+  }
+  margin: 0 auto;
+  width: 40%;
+  @include column;
+  align-items: start;
+  .column-form {
+    padding: 1em;
+    border-radius: 10px;
+    width: 100%;
+    background-color: var(--bg-white);
+  }
+}

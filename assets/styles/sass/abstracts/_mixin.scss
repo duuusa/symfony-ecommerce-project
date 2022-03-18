@@ -1,6 +1,10 @@
 @mixin flex {
   display: flex;
 }
+@mixin flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
 @mixin column {
   display: flex;
   flex-direction: column;
