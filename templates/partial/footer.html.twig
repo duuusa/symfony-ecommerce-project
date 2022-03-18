@@ -5,7 +5,7 @@
             <a href="{{ path('app_store') }}">Store</a>
             <ul>
                 {% for category in categories %}
-                    <li><a href="">{{ category.name }}</a></li>
+                    <li><a href="{{ path('app_products', {'productCategory' : category.id}) }}">{{ category.name }}</a></li>
                 {% endfor %}
             </ul>
         </div>

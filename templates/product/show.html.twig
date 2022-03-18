@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block body %}
+    <div class="subnav">
+        <h5>due to the pandemic delivery times may fluctuate, thank you for your understanding.</h5>
+    </div>
+    <main id="store">
+        <div class="card-details-product">
+            <div class="header-card-product">
+                <div>
+                    <h1>{{ product.name }}</h1>
+                    <h3>{{ product.description }}. New life.</h3>
+                    <div class="product-details">
+                        <h4>from {{ product.price }} $</h4>
+                        <p>{{ product.stock }} left</p>
+                    </div>
+                </div>
+                <boutton class="btn-buy">Buy<i class="fa-solid fa-angle-right"></i></boutton>
+            </div>
+            <img src="/assets/products/{{ product.productCategory.name }}/{{ product.picture }}" alt="image product">
+        </div>
+    </main>
+{% endblock %}

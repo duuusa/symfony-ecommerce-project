@@ -1,9 +1,9 @@
 <nav>
     <ul>
-        <li><a href="{{ path('home') }}"><img id="logo-nav" src="assets/icons/apple.svg" alt="logo apple"></a></li>
+        <li><a href="{{ path('home') }}"><img id="logo-nav" src="/assets/icons/apple.svg" alt="logo apple"></a></li>
         <li><a href="{{ path('app_store') }}">Store</a></li>
         {% for category in categories %}
-            <li><a href="">{{ category.name }}</a></li>
+            <li><a href="{{ path('app_products', {'productCategory' : category.id}) }}">{{ category.name }}</a></li>
         {% endfor %}
     </ul>
 </nav>

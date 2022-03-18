@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block body %}
+    <div class="subnav">
+        <h5>due to the pandemic delivery times may fluctuate, thank you for your understanding.</h5>
+    </div>
+    <main id="store">
+        <div class="div-products">
+            {% for product in products %}
+                <div class="card-product">
+                    <div class="header-card-product">
+                        <div>
+                            <h5>{{ product.name }}</h5>
+                            <p>from {{ product.price }} $</p>
+                        </div>
+                        <div class="after-arrow">
+                            <a href="{{ path('app_product', {'id' : product.id}) }}">Shop</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    </div>
+                    <img src="/assets/products/{{ product.productCategory.name }}/{{ product.picture }}" alt="image product">
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}

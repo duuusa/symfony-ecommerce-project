@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+    <div class="profile">
+        <div class="header-profile">
+            <div class="nav-profile">
+                <div class="nav-profile-content">
+                    <h3>Account</h3>
+                    <a href="{{ path('app_logout') }}">Sign Out<i class="fa-solid fa-angle-right"></i></a>
+                </div>
+            </div>
+            <h1>Hi {{ app.user.name }}.</h1>
+        </div>
+        <div class="profile-container">
+            <div class="user-info">
+                <h5 class="label-form">personnal informations</h5>
+                <div class="column-form">
+                    <label class="label-form">personnal name :</label>
+                    <span class="">{{ app.user.name }}</span>
+                </div>
+                <div class="column-form">
+                    <label class="label-form">personnal email :</label>
+                    <span class="">{{ app.user.email }}</span>
+                </div>
+                <div class="column-form">
+                    <label class="label-form">personnal password crypted :</label>
+                    <span class="">{{ app.user.password }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
