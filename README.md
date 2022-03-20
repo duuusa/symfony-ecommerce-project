@@ -57,4 +57,4 @@ you can navigate between homepage, store, bag and pages for every category
 
 - As Admin you can have acces to the easy admin interface and interact with the bag and create orders.
 - As User you can interact with the bag page and create orders.
-- As Viewer you can see the homepage and go to login | register page.
+- As Viewer you can see the homepage and go to login | register page and also see every product, but you have to be connected to interact with bag page !
