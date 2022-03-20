@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Order;
 use App\Entity\Product;
 use App\Entity\ProductCategory;
 use App\Entity\Store;
@@ -33,6 +34,8 @@ class DashboardController extends AbstractDashboardController
 
         $this->redirect($adminUrlGenerator->setController(TownCrudController::class)->generateUrl());
 
+        $this->redirect($adminUrlGenerator->setController(OrderCrudController::class)->generateUrl());
+
         // Option 2. You can make your dashboard redirect to different pages depending on the user
         //
         // if ('jane' === $this->getUser()->getUsername()) {
@@ -59,6 +62,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Products & Categories');
         yield MenuItem::linkToCrud('Products', 'fas fa-desktop', Product::class);
         yield MenuItem::linkToCrud('Categories', 'fas fa-database', ProductCategory::class);
+        yield MenuItem::section('Orders');
+        yield MenuItem::linkToCrud('Orders', 'fas fa-shopping-cart', Order::class);
         yield MenuItem::section('Stores & Cities');
         yield MenuItem::linkToCrud('Stores', 'fas fa-location-arrow', Store::class);
         yield MenuItem::linkToCrud('Towns', 'fas fa-building', Town::class);
