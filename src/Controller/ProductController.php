@@ -2,21 +2,35 @@
 
 namespace App\Controller;
 
-use App\Entity\ProductCategory;
 use App\Repository\ProductCategoryRepository;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends AbstractController
 {
     #[Route('/store', name: 'app_store')]
-    public function index(ProductRepository $productRepository,ProductCategoryRepository $productCategoryRepository): Response
+    public function index(Request $request,ProductRepository $productRepository,ProductCategoryRepository $productCategoryRepository): Response
     {
+        if ($request->get('by') && $request->get('by')=== 'asc')
+        {
+            $products = $productRepository->findBy([], [
+                'price'=>'ASC'
+            ]);
+        }elseif ($request->get('by') && $request->get('by')=== 'desc')
+        {
+            $products = $productRepository->findBy([], [
+                'price'=>'DESC'
+            ]);
+        }else
+        {
+            $products = $productRepository->findAll();
+        }
         return $this->render('product/index.html.twig', [
             'categories'=>$productCategoryRepository->findAll(),
-            'products'=>$productRepository->findAll()
+            'products'=>$products
         ]);
     }
 

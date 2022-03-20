@@ -5,6 +5,11 @@
 {% block body %}
     <div class="subnav">
         <h5>due to the pandemic delivery times may fluctuate, thank you for your understanding.</h5>
+        <select class="filter" name="filter" onchange=" window.location = '/store/?by=' + this.value ">
+            <option>no filter</option>
+            <option value="asc">order by asc</option>
+            <option value="desc">order by desc</option>
+        </select>
     </div>
     <main id="store">
         <h1 class="fw-store">Store.<span class="grey">The best way to buy the <br> products you love.</span></h1>

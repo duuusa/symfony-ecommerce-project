@@ -9,14 +9,21 @@
 }
 
 .subnav {
-  @include flex;
+  @include row;
   @include center-total;
+  justify-content: space-around;
   position: sticky;
   background-color: #fff;
   height: 50px;
   h5 {
     font-weight: 600;
   }
+}
+
+.filter {
+  padding: 0.5em;
+  border-radius: 5px;
+  background-color: var(--bg-grey);
 }
 
 .select-product {
