@@ -1,11 +1,14 @@
 .profile-container {
   margin: 0 auto;
-  width: 80%;
   padding: 3em 0.5em;
   background-color: var(--bg-grey);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .user-info {
+  .row {
+    @include row;
+    gap: 40px;
+  }
   h5 {
     padding: 0.5em;
   }
@@ -16,7 +19,6 @@
   .column-form {
     padding: 1em;
     border-radius: 10px;
-    width: 100%;
     background-color: var(--bg-white);
   }
 }

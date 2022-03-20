@@ -19,17 +19,19 @@
         <div class="profile-container">
             <div class="user-info">
                 <h5 class="label-form">personnal informations</h5>
-                <div class="column-form">
-                    <label class="label-form">personnal name :</label>
-                    <span class="">{{ app.user.name }}</span>
-                </div>
-                <div class="column-form">
-                    <label class="label-form">personnal email :</label>
-                    <span class="">{{ app.user.email }}</span>
+                <div class="row">
+                    <div class="column-form">
+                        <label class="label-form">personnal name :</label>
+                        <span>{{ app.user.name }}</span>
+                    </div>
+                    <div class="column-form">
+                        <label class="label-form">personnal email :</label>
+                        <span>{{ app.user.email }}</span>
+                    </div>
                 </div>
                 <div class="column-form">
                     <label class="label-form">personnal password crypted :</label>
-                    <span class="">{{ app.user.password }}</span>
+                    <span>{{ app.user.password }}</span>
                 </div>
             </div>
         </div>

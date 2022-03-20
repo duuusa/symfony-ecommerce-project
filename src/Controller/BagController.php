@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Order;
 use App\Repository\ProductRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -70,12 +71,22 @@ class BagController extends AbstractController
         return $this->redirectToRoute('app_bag');
     }
 
-    #[Route('/bag/checkout/', name: 'order_checkout')]
-    public function check(SessionInterface $session )
+    #[Route('/bag/checkout', name: 'order_checkout')]
+    public function check(ProductRepository $productRepository, EntityManagerInterface $manager, SessionInterface $session)
     {
         $bag = $session->get('bag', []);
-        dd($bag);
-        $order = new Order();
+
+        foreach ($bag as $item => $quantity) {
+            $product = $productRepository->find($item);
+            $order = new Order();
+            $order->setUser($this->getUser());
+            $order->addProduct($product);
+            $order->setQuantity($quantity);
+            $manager->persist($order);
+        }
+        $manager->flush();
+
+        $session->remove('bag');
 
         return $this->redirectToRoute('app_bag');
     }

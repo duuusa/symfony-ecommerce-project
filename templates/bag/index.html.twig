@@ -8,7 +8,7 @@
             <div class="subnav-bag">
                 <h2>Your total bag is {{ price }}$</h2>
                 <p>Free delivery and free returns.</p>
-                <a class="btn-check" href="">Check Order</a>
+                <a class="btn-check" href="{{ path('order_checkout') }}">Check Order</a>
             </div>
             {% for product in products %}
                 <div class="element-bag">
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div>
-                        <a class="del-btn" href="{{ path('order_delete', {'id' : product.product.id}) }}">
+                        <a class="del-btn" href="{{ path('order_delete') }}">
                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                         </a>
                     </div>

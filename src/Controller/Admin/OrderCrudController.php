@@ -26,15 +26,6 @@ class OrderCrudController extends AbstractCrudController
             IdField::new('id')->hideOnIndex()->setDisabled()->setLabel('id order'),
             AssociationField::new('user'),
             AssociationField::new('product'),
-            FormField::addTab('Picture'),
-            ImageField::new('picture')
-                ->setBasePath('assets/products')
-                ->setUploadDir('public/assets/products')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setFormTypeOptions(['attr' => ['accept' => 'image/jpeg', 'image/png']])
-                ->setHelp('your image should be a jpeg or a png'),
-            FormField::addTab('Price & Quantity'),
-            NumberField::new('price'),
             IntegerField::new('quantity')->setFormTypeOptions([
                 'attr' => [
                     'min' => 0,
