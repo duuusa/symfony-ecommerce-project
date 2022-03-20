@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div>
-                        <a class="del-btn" href="{{ path('order_delete') }}">
+                        <a class="del-btn" href="{{ path('order_delete', {'id' : product.product.id}) }}">
                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                         </a>
                     </div>
