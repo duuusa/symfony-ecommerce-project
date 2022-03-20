@@ -1,0 +1,122 @@
+#bag {
+  @include column;
+  @include center-align;
+}
+
+.header-bag {
+  width: 75%;
+  padding: 1em;
+  border-bottom: 2px solid var(--bg-grey);
+  h1 {
+    font-weight: 600;
+  }
+  p {
+    padding: 1em;
+  }
+
+  margin-bottom: 30px;
+}
+
+.subnav-bag {
+  width: 70%;
+  padding: 2em;
+  border-bottom: 3px solid var(--bg-grey) ;
+  h2 {
+    font-size: 40px;
+  }
+  p {
+    padding: 1.2em;
+  }
+  text-align: center;
+  height: 200px;
+}
+
+.footer-bag {
+  padding: 1em;
+  width: 50%;
+  @include column;
+  align-items: end;
+  h2 {
+    font-weight: 500;
+    margin-bottom: 25px;
+  }
+}
+
+.btn-check {
+  width: fit-content;
+  border-radius: 8px;
+  padding: 0.5em 3em;
+  color: var(--white-color);
+  background-color: var(--blue);
+  &:hover {
+    transition: ease 0.1s;
+    background-color: rgba(0, 102, 204, 0.9);
+  }
+}
+
+.bag-container {
+  background-image: url("/public/assets/illustrations/apple-new-arrivals-checkout-201804.jpeg");
+  width: 70%;
+  height: 400px;
+  background-position: center;
+  background-size:cover;
+  .content {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    @include column;
+    justify-content: center;
+    h1 {
+      font-weight: 600;
+    }
+    p {
+      padding: 1em;
+    }
+    a, i {
+    color: #06c;
+  }
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  margin-bottom: 30px;
+}
+
+.element-bag, .content-element {
+  width: 70%;
+  @include row;
+  @include center-total;
+}
+
+.element-bag {
+  padding: 1em;
+  border-bottom: 2px solid var(--bg-grey);
+
+  .del-btn {
+    i {
+      border-radius: 3px;
+      padding: 0.3em;
+      &:hover {
+        transition: ease 0.1s;
+        background-color: var(--bg-grey);
+      }
+    }
+  }
+}
+
+.content-element {
+  justify-content: space-around;
+  h1 {
+    font-weight: 600;
+  }
+  h5 {
+    font-size: 21px;
+  }
+}
+
+#order-picture {
+  padding: 1em;
+  width: 200px;
+}
