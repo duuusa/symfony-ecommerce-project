@@ -5,5 +5,6 @@
         {% for category in categories %}
             <li><a href="{{ path('app_products', {'productCategory' : category.id}) }}">{{ category.name }}</a></li>
         {% endfor %}
+        <li><a href="{{ path('app_bag') }}"><img id='bag' src="/assets/icons/globalnav_bag_image_large.svg" alt="bag logo"></a></li>
     </ul>
 </nav>

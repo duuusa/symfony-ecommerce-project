@@ -17,7 +17,7 @@
                         <p>{{ product.stock }} left</p>
                     </div>
                 </div>
-                <boutton class="btn-buy">Buy<i class="fa-solid fa-angle-right"></i></boutton>
+                <a class="btn-buy" href="{{ path('order_add', {'id': product.id}) }}">Buy<i class="fa-solid fa-angle-right"></i></a>
             </div>
             <img src="/assets/products/{{ product.productCategory.name }}/{{ product.picture }}" alt="image product">
         </div>

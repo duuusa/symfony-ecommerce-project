@@ -8,6 +8,9 @@
             <div class="nav-profile">
                 <div class="nav-profile-content">
                     <h3>Account</h3>
+                    {% if app.user.roles == ['ROLE_ADMIN','ROLE_USER'] %}
+                        <a href="{{ path('admin') }}">Dashboard</a>
+                    {% endif %}
                     <a href="{{ path('app_logout') }}">Sign Out<i class="fa-solid fa-angle-right"></i></a>
                 </div>
             </div>

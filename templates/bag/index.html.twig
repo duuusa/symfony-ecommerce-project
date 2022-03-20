@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Your bag{% endblock %}
+
+{% block body %}
+    <main id="bag">
+        {% if products | length > 0 %}
+            <div class="subnav-bag">
+                <h2>Your total bag is {{ price }}$</h2>
+                <p>Free delivery and free returns.</p>
+                <a class="btn-check" href="">Check Order</a>
+            </div>
+            {% for product in products %}
+                <div class="element-bag">
+                    <img id='order-picture' src="/assets/products/{{ product.product.productCategory.name }}/{{ product.product.picture }}" alt="image product">
+                    <div class="content-element">
+                        <h1>{{ product.product.name }}</h1>
+                        <h5>{{ product.quantity }}</h5>
+                        <div class="product-details">
+                            <h4>{{ product.product.price * product.quantity }} $</h4>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="del-btn" href="{{ path('order_delete', {'id' : product.product.id}) }}">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="footer-bag">
+                <h2>Total : {{ price }}$</h2>
+                <a class="btn-check" href="{{ path('order_checkout', {'id' : app.user.i }) }}">Check Order</a>
+            </div>
+        {% else %}
+            <div class="header-bag">
+                <h1>Your bag is empty {{ app.user.name }}.</h1>
+                <p>feel free to come back !</p>
+            </div>
+            <div class="bag-container">
+                <div class="content">
+                    <h1>New Arrivals</h1>
+                    <p>Check out our lastest products</p>
+                    <div class="row">
+                        <a href="{{ path('app_store') }}">Shop</a>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </main>
+{% endblock %}
