@@ -29,7 +29,7 @@
             {% endfor %}
             <div class="footer-bag">
                 <h2>Total : {{ price }}$</h2>
-                <a class="btn-check" href="{{ path('order_checkout', {'id' : app.user.i }) }}">Check Order</a>
+                <a class="btn-check" href="{{ path('order_checkout', {'id' : app.user.id }) }}">Check Order</a>
             </div>
         {% else %}
             <div class="header-bag">
